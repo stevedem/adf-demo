@@ -1,6 +1,7 @@
 {
 	"name": "AlleghenyCountyPropertySalesCSV",
 	"properties": {
+		"description": "CSV file for importing",
 		"linkedServiceName": {
 			"referenceName": "ADLS",
 			"type": "LinkedServiceReference"
