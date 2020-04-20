@@ -1,0 +1,295 @@
+{
+	"name": "CopyDataPipeline_01",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy from ADLS to SQL",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "PARID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PARID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYHOUSENUM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYHOUSENUM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYFRACTION",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYFRACTION",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYADDRESSDIR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYADDRESSDIR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYADDRESSSTREET",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYADDRESSSTREET",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYADDRESSSUF",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYADDRESSSUF",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYADDRESSUNITDESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYADDRESSUNITDESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYUNITNO",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYUNITNO",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYCITY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYCITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYSTATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYSTATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PROPERTYZIP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PROPERTYZIP",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "SCHOOLCODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SCHOOLCODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SCHOOLDESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SCHOOLDESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MUNICODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MUNICODE",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "MUNIDESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "MUNIDESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "RECORDDATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "RECORDDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SALEDATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALEDATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "PRICE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRICE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEEDBOOK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEEDBOOK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DEEDPAGE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DEEDPAGE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALECODE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALECODE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SALEDESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SALEDESC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INSTRTYP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INSTRTYP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "INSTRTYPDESC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "INSTRTYPDESC",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AlleghenyCountyPropertySalesCSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AlleghenyCountyPropertySalesDB",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
