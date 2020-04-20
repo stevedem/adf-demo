@@ -1,6 +1,7 @@
 {
 	"name": "CopyDataPipeline_01",
 	"properties": {
+		"description": "Pipeline to copy data from ADLS to Azure SQL",
 		"activities": [
 			{
 				"name": "Copy from ADLS to SQL",
