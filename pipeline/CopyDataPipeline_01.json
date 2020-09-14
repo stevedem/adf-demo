@@ -5,6 +5,7 @@
 		"activities": [
 			{
 				"name": "Copy from ADLS to SQL",
+				"description": "Adding a description",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
